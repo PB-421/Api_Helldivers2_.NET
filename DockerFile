@@ -1,0 +1,18 @@
+# Use the official .NET SDK image to build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+WORKDIR /app
+
+# Copy and restore dependencies
+COPY *.sln .
+COPY HelldiversApi/*.csproj ./HelldiversApi/
+RUN dotnet restore ./HelldiversApi/HelldiversApi.csproj
+
+# Copy everything and build
+COPY . .
+RUN dotnet publish ./HelldiversApi/HelldiversApi.csproj -c Release -o out
+
+# Use a lightweight runtime image for production
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/HelldiversApi/out ./
+ENTRYPOINT ["dotnet", "HelldiversApi.dll"]
