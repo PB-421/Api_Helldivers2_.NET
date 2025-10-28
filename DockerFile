@@ -1,26 +1,30 @@
 # Etapa 1: Build
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+
 WORKDIR /app
 
-# Copiar los archivos de solución y proyecto
-COPY *.sln .
-COPY HelldiversApi/*.csproj ./HelldiversApi/
-RUN dotnet restore ./HelldiversApi/HelldiversApi.csproj
+# Restaurar dependencias
+COPY *.csproj ./
+RUN dotnet restore
 
-# Copiar el resto del código y compilar en modo Release
-COPY . .
-RUN dotnet publish ./HelldiversApi/HelldiversApi.csproj -c Release -o /app/out
+# Copiar todo el proyecto
+COPY . ./
 
-# Etapa 2: Runtime (ligera)
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+# Publicar en Release
+RUN dotnet publish -c Release -o /app/publish
+
+# Etapa 2: Runtime
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS runtime
 WORKDIR /app
 
-# Copiar los archivos compilados desde la etapa anterior
-COPY --from=build /app/out ./
+# Copiar la app publicada
+COPY --from=build /app/publish ./
 
-# Exponer el puerto (Render usa 8080)
-ENV ASPNETCORE_URLS=http://+:8080
-EXPOSE 8080
+# Configurar puerto dinámico para Render
+ENV ASPNETCORE_URLS=http://+:$PORT
 
-# Comando de inicio
+# Exponer puerto dinámico
+EXPOSE $PORT
+
+# Ejecutar la API
 ENTRYPOINT ["dotnet", "HelldiversApi.dll"]
