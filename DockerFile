@@ -1,18 +1,26 @@
-# Use the official .NET SDK image to build
+# Etapa 1: Build
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-# Copy and restore dependencies
+# Copiar los archivos de solución y proyecto
 COPY *.sln .
 COPY HelldiversApi/*.csproj ./HelldiversApi/
 RUN dotnet restore ./HelldiversApi/HelldiversApi.csproj
 
-# Copy everything and build
+# Copiar el resto del código y compilar en modo Release
 COPY . .
-RUN dotnet publish ./HelldiversApi/HelldiversApi.csproj -c Release -o out
+RUN dotnet publish ./HelldiversApi/HelldiversApi.csproj -c Release -o /app/out
 
-# Use a lightweight runtime image for production
+# Etapa 2: Runtime (ligera)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-COPY --from=build /app/HelldiversApi/out ./
+
+# Copiar los archivos compilados desde la etapa anterior
+COPY --from=build /app/out ./
+
+# Exponer el puerto (Render usa 8080)
+ENV ASPNETCORE_URLS=http://+:8080
+EXPOSE 8080
+
+# Comando de inicio
 ENTRYPOINT ["dotnet", "HelldiversApi.dll"]

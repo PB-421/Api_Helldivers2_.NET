@@ -53,3 +53,4 @@
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/Npgsql.dll
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/DotNetEnv.dll
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/Sprache.dll
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/obj/Debug/net8.0/HelldiversApi.sourcelink.json
