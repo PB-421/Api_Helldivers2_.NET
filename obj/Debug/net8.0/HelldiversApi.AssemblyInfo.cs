@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HelldiversApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63ca742c23fc6a097356139f1c6a3eba03f50887")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+add17edcf8c67c6d05564ece5cb7733115fef7b7")]
 [assembly: System.Reflection.AssemblyProductAttribute("HelldiversApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HelldiversApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

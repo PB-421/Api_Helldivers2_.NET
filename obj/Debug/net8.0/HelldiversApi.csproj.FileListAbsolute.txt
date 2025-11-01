@@ -54,3 +54,8 @@
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/DotNetEnv.dll
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/Sprache.dll
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/obj/Debug/net8.0/HelldiversApi.sourcelink.json
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/publish/web.config
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/publish/appsettings.Development.json
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/publish/appsettings.json
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/publish/HelldiversApi.deps.json
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Debug/net8.0/publish/HelldiversApi.runtimeconfig.json

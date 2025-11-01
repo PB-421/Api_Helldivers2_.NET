@@ -54,3 +54,8 @@
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/obj/Release/net8.0/HelldiversApi.pdb
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/obj/Release/net8.0/HelldiversApi.genruntimeconfig.cache
 /home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/obj/Release/net8.0/ref/HelldiversApi.dll
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Release/net8.0/publish/web.config
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Release/net8.0/publish/appsettings.Development.json
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Release/net8.0/publish/appsettings.json
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Release/net8.0/publish/HelldiversApi.deps.json
+/home/pablo/Escritorio/Programacion/Cuarto Curso/HD2/HelldiversApi/bin/Release/net8.0/publish/HelldiversApi.runtimeconfig.json

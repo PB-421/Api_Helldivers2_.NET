@@ -14,11 +14,26 @@ builder.Services.AddSingleton<Client>(sp =>
     client.InitializeAsync().GetAwaiter().GetResult(); 
     return client;
 });
+
 builder.Services.AddControllers();
+
+// CONFIGURAR CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
 
 builder.WebHost.UseUrls("http://0.0.0.0:8080");
 
 var app = builder.Build();
+
+app.UseCors("AllowAll");
 
 app.MapControllers();
 
